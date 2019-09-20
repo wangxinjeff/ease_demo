@@ -158,6 +158,7 @@ public class ConversationListFragment extends EaseConversationListFragment{
         try {
             JSONObject ext = new JSONObject();
             ext.put("top", i);
+            ext.put("topTime",System.currentTimeMillis());
             conversation.setExtField(ext.toString());
         }catch (Exception e){
             e.printStackTrace();

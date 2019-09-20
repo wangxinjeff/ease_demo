@@ -238,4 +238,17 @@ public class EaseCommonUtils {
         return 0;
     }
 
+    public static long getExtTopTime(EMConversation conversation){
+        try {
+            String extField = conversation.getExtField();
+            if (extField.contains("topTime")) {
+                JSONObject extJson = new JSONObject(extField);
+                long topTime = extJson.getLong("topTime");
+                return topTime;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

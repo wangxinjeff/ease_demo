@@ -222,11 +222,10 @@ public class EaseConversationListFragment extends EaseBaseFragment implements Ea
         synchronized (conversations) {
             for (EMConversation conversation : conversations.values()) {
                 if (conversation.getAllMessages().size() != 0) {
-                    //判断会话扩展区分置顶会话
+                    //判断会话扩展区分置顶会话，置顶会话以会话置顶时间排序
                     if(EaseCommonUtils.getExtTop(conversation) == 1){
-                        sortListTop.add(new Pair<Long, EMConversation>(conversation.getLastMessage().getMsgTime(), conversation));
+                        sortListTop.add(new Pair<Long, EMConversation>(EaseCommonUtils.getExtTopTime(conversation), conversation));
                     }else {
-
                         sortList.add(new Pair<Long, EMConversation>(conversation.getLastMessage().getMsgTime(), conversation));
                     }
                 }
