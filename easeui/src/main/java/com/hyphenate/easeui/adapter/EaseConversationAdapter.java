@@ -133,7 +133,6 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.ease_row_chat_history, parent, false);
-//            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_listview, parent, false);
         }
         ViewHolder holder = (ViewHolder) convertView.getTag();
         if (holder == null) {
@@ -410,12 +409,6 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         /** 删除 */
         TextView remove;
 
-
-
-//        TextView itemTvToTop;
-//        public ViewHolder(View center,View menu) {
-//            this.itemTvToTop = (TextView) menu.findViewById(R.id.top);
-//        }
     }
 
 
